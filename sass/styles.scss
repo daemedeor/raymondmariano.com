@@ -8,13 +8,18 @@ body {
 .float-right {
   float: right;
 }
+
+#coverflow{
+  margin: 0 0;
+  max-width: 100%;
+}
 nav.row {
   color: $menuColor;
   border-bottom: 1px solid $menuColor;
   padding-bottom: 15px;
   margin: 0 0;
   max-width: 100%;
-  
+
   #title{
     
     .name{
@@ -49,7 +54,7 @@ nav.row {
       padding: 5px 0;
     }
 
-    .active a, &:hover a {
+    &.active a, &:hover a {
       border-top: 2px solid $activeColor;
       border-bottom: 2px solid $activeColor;
       color: $menuColor;

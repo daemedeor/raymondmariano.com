@@ -1,3 +1,4 @@
+-var menu = { 'Home': '/', 'Art Portfolio': '/artportfolio', 'GIFs': '/gifs', 'Videos': '/videos', 'About': '/about', 'Contact': '/contact' };
 nav.row
   .medium-3.columns#title 
     .name 
@@ -7,15 +8,10 @@ nav.row
 
   .medium-9.columns#menu
     ul.float-right
-      li
-        a(href="#") Home
-      li
-        a(href="#") Art Portfolio
-      li
-        a(href="#") GIFs
-      li
-        a(href="#") Videos
-      li
-        a(href="#") About
-      li
-        a(href="#") Contact
+      each val, key in menu
+        if selected === val
+          li.active
+            a(href=val, title=key)= key
+        else
+          li
+            a(href=val, title=key)= key

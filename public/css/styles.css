@@ -6,6 +6,11 @@ body {
   float: right;
 }
 
+#coverflow {
+  margin: 0 0;
+  max-width: 100%;
+}
+
 nav.row {
   color: #00CAFF;
   border-bottom: 1px solid #00CAFF;
@@ -39,7 +44,7 @@ nav.row li a {
   transition: all .3s linear;
   padding: 5px 0;
 }
-nav.row li .active a, nav.row li:hover a {
+nav.row li.active a, nav.row li:hover a {
   border-top: 2px solid #FEFF00;
   border-bottom: 2px solid #FEFF00;
   color: #00CAFF;
