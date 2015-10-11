@@ -1,0 +1,59 @@
+$menuColor: #00CAFF;
+$activeColor: #FEFF00;
+
+body {
+  background-color: black;
+}
+
+.float-right {
+  float: right;
+}
+nav.row {
+  color: $menuColor;
+  border-bottom: 1px solid $menuColor;
+  padding-bottom: 15px;
+  margin: 0 0;
+  max-width: 100%;
+  
+  #title{
+    
+    .name{
+      font-size: 35px;
+
+      .first, .last{
+        padding: 0;
+        height: 40px;
+      }  
+    }
+
+    .subtitle{
+      font-size: 14px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    line-height: 30px;
+    margin: 0;
+    line-height: 100px;
+  }
+
+  li {
+    color: $activeColor;
+    display: inline;
+    margin: 0 15px;
+
+    a {
+      color: $activeColor;
+      transition: all .3s linear;
+      padding: 5px 0;
+    }
+
+    .active a, &:hover a {
+      border-top: 2px solid $activeColor;
+      border-bottom: 2px solid $activeColor;
+      color: $menuColor;
+    }    
+  }
+
+}
