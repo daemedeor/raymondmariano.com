@@ -50,15 +50,23 @@ nav {
     }    
   }
 
-  &#side-nav{
+  &#side-nav {
     padding: 0;
+    width: 25%;
+    border-bottom: none;
+    min-width: 142px;
+    position: relative;
+    
+    h1 {
+      margin: 0 0 -5px;
+    }
 
     li {
-      margin: 5px 0;
+      margin: 2px 0;
       width: 100%;
 
       a { 
-        padding: 5px;
+        padding: 0;
       }   
     }
   }
@@ -68,7 +76,7 @@ nav {
   }
 
   #title {
-    padding-left: 33px;
+    padding-left: 30px;
     display: block;
 
     .name {

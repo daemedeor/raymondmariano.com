@@ -3,6 +3,7 @@ var express = require('express')
     , path = require("path")
     , server  = require("http").createServer(app)
     , bodyParser = require("body-parser")
+    , gif = require("./server/routes/gif.js")
     , config = require("./config/config");
 
 app.set('views', path.join(__dirname, '/views'));
@@ -12,6 +13,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use("/gif", gif);
 
 app.get("/contact", function(req,res){
   res.render("contact", {selected: '/contact', page: 'contact'});
@@ -23,10 +25,6 @@ app.get("/about", function(req,res){
 
 app.get("/videos", function(req,res){
   res.render("videos", {selected: '/videos', page: 'videos'});
-});
-
-app.get("/gif", function(req, res) {
-  res.render("gif", {selected: '/gif', page: 'gif'});
 });
 
 app.get("/artportfolio", function(req, res) {

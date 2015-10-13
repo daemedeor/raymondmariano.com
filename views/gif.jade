@@ -1,30 +1,47 @@
-extends layout
+extends ./shared/layout
 
 block content
-  .row
-    #side-nav.columns.small-12.medium-4
+  .row#content
+    nav#side-nav
       h4.text-center Animated
       h1 GIFs
       ul.text-center
         li.active
-          a(href="#") Arithmageia - Rokuro
+          a(href="#" data-gif="rokuro") Arithmageia - Rokuro
         li
-          a(href="#") Arithmageia - Aonghus
+          a(href="#" data-gif="aonghus") Arithmageia - Aonghus
         li
-          a(href="#") Arithmageia - Teza
+          a(href="#" data-gif="teza") Arithmageia - Teza
         li
-          a(href="#") Arithmageia - Syna
+          a(href="#" data-gif="syna") Arithmageia - Syna
         li
-          a(href="#") Arithmageia - Quinajah
+          a(href="#" data-gif="quinajah") Arithmageia - Quinajah
         li
-          a(href="#") Arithmageia - Tertius
+          a(href="#" data-gif="tertius") Arithmageia - Tertius
         li
-          a(href="#") Savannah Sun
+          a(href="#" data-gif="savannah") Savannah Sun
         li
-          a(href="#") Monster Drink Toxic
+          a(href="#" data-gif="monster") Monster Drink Toxic
         li
-          a(href="#") Beach at Dusk
+          a(href="#" data-gif="beach") Beach at Dusk
         li
-          a(href="#") Pillbox Sunrise
+          a(href="#" data-gif="pillbox") Pillbox Sunrise
         li
-          a(href="#") Laugh Emoticon
+          a(href="#" data-gif="laugh") Laugh Emoticon
+    
+    #main-content
+      include ./partial/gif/arithmageia
+
+block footerScripts
+  script.
+    $(function(){
+      
+      $("li a", "#side-nav").click(function(e){
+
+        e.preventDefault();
+        $("li", "#side-nav").removeClass("active");
+        $(this).closest("li").addClass("active");
+        $("")
+
+      });
+    });

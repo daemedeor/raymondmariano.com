@@ -1,51 +1,22 @@
 body {
   background-color: black;
-  padding: 27px;
+  padding: 27px 27px 0 27px;
 }
 
-.float-right {
-  float: right;
-}
-
-#coverflow {
-  margin: 0 0;
-  max-width: 100%;
-}
-
-nav.row {
-  color: #FEFF00;
+nav {
   border-bottom: 1px solid #00CAFF;
   padding-bottom: 10px;
-  margin: 0 0;
-  max-width: 100%;
+  margin: 0;
 }
-nav.row #menu {
-  padding: 0;
+nav, nav a, nav li, nav h1, nav h2, nav h3, nav h4, nav p {
+  color: #FEFF00;
 }
-nav.row #title {
-  padding-left: 30px;
-  color: #00CAFF;
-  display: block;
-}
-nav.row #title .name {
-  font-size: 35px;
-  color: #00CAFF;
-}
-nav.row #title .name .first, nav.row #title .name .last {
-  padding: 0;
-  color: #00CAFF;
-  height: 40px;
-}
-nav.row #title .subtitle {
-  font-size: 13px;
-  color: #00CAFF;
-}
-nav.row ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   width: 100%;
 }
-nav.row li {
+nav li {
   text-align: center;
   color: #FEFF00;
   font-size: 13px;
@@ -55,24 +26,60 @@ nav.row li {
   cursor: pointer;
   min-width: 62px;
 }
-nav.row li a {
+nav li a {
   padding: 5px;
   display: inline-block;
   width: 100%;
   color: #FEFF00;
   transition: all .3s linear;
 }
-nav.row li:hover {
+nav li:hover {
   background-color: #00CAFF;
 }
-nav.row li:hover a {
+nav li:hover a {
   color: black;
 }
-nav.row li.active {
+nav li.active {
   background-color: #FEFF00;
 }
-nav.row li.active a {
+nav li.active a {
   color: black;
+}
+nav#side-nav {
+  padding: 0;
+  width: 25%;
+  border-bottom: none;
+  min-width: 142px;
+  position: relative;
+}
+nav#side-nav h1 {
+  margin: 0 0 -5px;
+}
+nav#side-nav li {
+  margin: 2px 0;
+  width: 100%;
+}
+nav#side-nav li a {
+  padding: 0;
+}
+nav #menu {
+  padding: 0;
+}
+nav #title {
+  padding-left: 30px;
+  display: block;
+}
+nav #title .name {
+  font-size: 35px;
+}
+nav #title .name .first, nav #title .name .last {
+  padding: 0;
+  color: #00CAFF;
+  height: 40px;
+}
+nav #title .subtitle {
+  font-size: 13px;
+  color: #00CAFF;
 }
 
 @media (min-width: 641px) {
@@ -82,11 +89,18 @@ nav.row li.active a {
   }
 }
 @media (max-width: 640px) {
-  nav.row #menu li {
+  nav #menu li {
     margin: 10px 0;
   }
-
-  nav.row #title {
+  nav #title {
     padding: 0;
   }
+}
+.float-right {
+  float: right;
+}
+
+#coverflow {
+  margin: 0 0;
+  max-width: 100%;
 }
