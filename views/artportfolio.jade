@@ -1,1 +1,43 @@
 extends layout
+
+block content
+  .row
+    div.small-8.medium-8.columns#g-container
+      #gallery
+        div#img-container
+          #showcase
+            img(src="#")
+        #thumbnail-container
+          include partial/thumbnail.jade
+    nav#side-nav.small-4.medium-4.columns
+      h1.text-center Art 
+      h1.text-center Galleries
+      ul.text-center
+        li.active
+          a(href="#") CONCEPT. ILLUSTRATIONS
+        li
+          a(href="#") DESIGN. GRAPHIC ART
+        li
+          a(href="#") SHIRT DESIGNS
+        li
+          a(href="#") HAWAII ACTIVITIES AUTHORITY
+        li
+          a(href="#") HAWAII DISCOVERY UNIVERSITY
+        li
+          a(href="#") KOMBUCHA TEA
+        li 
+          a(href="#") HAWAII RAINBOW COLORS
+        li 
+          a(href="#") ADVERTISEMENTS
+        li 
+          a(href="#") STYLUS PENS
+        li
+          a(href="#") FRUITY NUDES
+        li
+          a(href="#") PAINTING
+        li
+         a(href="#") CHARCOAL DRAWING
+        li
+          a(href="#") PHOTOGRAPHY
+
+  

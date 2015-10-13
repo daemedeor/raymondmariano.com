@@ -1,35 +1,41 @@
 extends layout
 
-.row
-  .small-6.columns
-    h1 Raymond Mariano
-    div#address
-      p.
-        4180 Keanu St. Apt 3
-        Honolulu, HI 96816
-        Cell: (808) 223 4219
-        Email: rcm@hawaii.edu
+block content
+  #contact
+    .row
+      .small-6.columns#information
+        h4 Raymond Mariano
+        div#address
+          p.
+            4180 Keanu St. Apt 3
+          p.
+            Honolulu, HI 96816
+          p.
+            Cell: (808) 223 4219
+          p.
+            Email: rcm@hawaii.edu
 
-  .small-6.columns
-    img(src="#")
-.row
-  form
-    .row
       .small-6.columns
-        .form-group
-          label.small-12.columns Your Name:
-          input.small-12.columns(name="name")
-        .form-group
-          label.small-12.columns Your Email:
-          input.small-12.columns(name="email")
-        .form-group
-          label.small-12.columns Subject:
-          input.small-12.columns(name="subject")
-      .small-6.columns
-        .form-group
-          label.small-12.columns Message:
-          textarea(name="message")
-    .row
-      .float-right
-        button(type="submit") Send
+        img(src="#")
+
+    .row.contact-form
+      form
+        .row
+          .small-6.columns
+            .form-group
+              label.small-12.columns Your Name:
+              input.small-12.columns(name="name")
+            .form-group
+              label.small-12.columns Your Email:
+              input.small-12.columns(name="email")
+            .form-group
+              label.small-12.columns Subject:
+              input.small-12.columns(name="subject")
+          .small-6.columns#messages
+            label.small-12.columns Message:
+            textarea.small-12.columns(name="message")
+        .row
+          .small-6.columns
+            .float-right
+              button(type="submit") Send
 

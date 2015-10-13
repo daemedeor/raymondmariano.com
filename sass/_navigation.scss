@@ -1,0 +1,108 @@
+@import "variable";
+
+nav {
+  border-bottom: 1px solid $blue;
+  padding-bottom: $defaultPadding;
+  margin: 0;
+
+  &, a, li, h1, h2, h3, h4, p {
+    color: $yellow;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    text-align: center;
+    color: $yellow;
+    font-size: 13px;
+    display: inline-block;
+    white-space: nowrap;
+    width: 16%;
+    cursor: pointer;
+    min-width: 62px;
+
+    a {
+      padding: 5px;
+      display: inline-block;
+      width: 100%;
+      color: $yellow;
+      transition: all .3s linear;
+    }
+
+    &:hover {
+      background-color: $blue;
+      
+      a {
+        color: black;
+      }
+    }
+
+    &.active {
+      background-color: $yellow;
+
+      a {
+        color: black;
+      }
+    }    
+  }
+
+  &#side-nav{
+    padding: 0;
+
+    li {
+      margin: 5px 0;
+      width: 100%;
+
+      a { 
+        padding: 5px;
+      }   
+    }
+  }
+
+  #menu {
+    padding: 0;
+  }
+
+  #title {
+    padding-left: 33px;
+    display: block;
+
+    .name {
+      font-size: 35px;
+
+      .first, .last{
+        padding: 0;
+        color: $blue;
+        height: 40px;
+      }  
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: $blue;
+    }
+  }
+}
+
+@media (min-width: 641px) {
+  nav.row #menu li {
+    position: relative;
+    top: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    #menu li {
+      margin: 10px 0;
+    }
+  
+    #title {
+      padding: 0;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  padding: 27px;
 }
 
 .float-right {
@@ -12,40 +13,80 @@ body {
 }
 
 nav.row {
-  color: #00CAFF;
+  color: #FEFF00;
   border-bottom: 1px solid #00CAFF;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   margin: 0 0;
   max-width: 100%;
 }
+nav.row #menu {
+  padding: 0;
+}
+nav.row #title {
+  padding-left: 30px;
+  color: #00CAFF;
+  display: block;
+}
 nav.row #title .name {
   font-size: 35px;
+  color: #00CAFF;
 }
 nav.row #title .name .first, nav.row #title .name .last {
   padding: 0;
+  color: #00CAFF;
   height: 40px;
 }
 nav.row #title .subtitle {
-  font-size: 14px;
+  font-size: 13px;
+  color: #00CAFF;
 }
 nav.row ul {
   list-style-type: none;
-  line-height: 30px;
   margin: 0;
-  line-height: 100px;
+  width: 100%;
 }
 nav.row li {
+  text-align: center;
   color: #FEFF00;
-  display: inline;
-  margin: 0 15px;
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+  width: 16%;
+  cursor: pointer;
+  min-width: 62px;
 }
 nav.row li a {
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
   color: #FEFF00;
   transition: all .3s linear;
-  padding: 5px 0;
 }
-nav.row li.active a, nav.row li:hover a {
-  border-top: 2px solid #FEFF00;
-  border-bottom: 2px solid #FEFF00;
-  color: #00CAFF;
+nav.row li:hover {
+  background-color: #00CAFF;
+}
+nav.row li:hover a {
+  color: black;
+}
+nav.row li.active {
+  background-color: #FEFF00;
+}
+nav.row li.active a {
+  color: black;
+}
+
+@media (min-width: 641px) {
+  nav.row #menu li {
+    position: relative;
+    top: 50px;
+  }
+}
+@media (max-width: 640px) {
+  nav.row #menu li {
+    margin: 10px 0;
+  }
+
+  nav.row #title {
+    padding: 0;
+  }
 }

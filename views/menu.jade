@@ -1,12 +1,12 @@
--var menu = { 'Home': '/', 'Art Portfolio': '/artportfolio', 'GIFs': '/gifs', 'Videos': '/videos', 'About': '/about', 'Contact': '/contact' };
+-var menu = { 'Home': '/', 'Portfolio': '/artportfolio', 'GIFs': '/gif', 'Videos': '/videos', 'About': '/about', 'Contact': '/contact' };
 nav.row
-  .medium-3.columns#title 
-    .name 
+  a(href="/").small-12.medium-4.large-3.columns#title 
+    .name.clearfix
       span.first.small-12.columns RAYMOND
       span.last.small-12.columns MARIANO
     .subtitle Artist. Animator. Design.
 
-  .medium-9.columns#menu
+  .small-12.medium-8.large-9.columns#menu
     ul.float-right
       each val, key in menu
         if selected === val

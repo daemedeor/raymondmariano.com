@@ -1,0 +1,93 @@
+#side-nav {
+  padding: 0;
+}
+#side-nav, #side-nav a, #side-nav h1 {
+  color: #00CAFF;
+}
+#side-nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+#side-nav li {
+  margin: 5px 0;
+  font-size: 13px;
+  width: 100%;
+  padding: 5px;
+}
+#side-nav li a {
+  color: #FEFF00;
+  transition: all .3s linear;
+}
+#side-nav li:hover {
+  background-color: #00CAFF;
+}
+#side-nav li:hover a {
+  color: black;
+}
+#side-nav li.active {
+  background-color: #FEFF00;
+}
+#side-nav li.active a {
+  color: black;
+}
+
+.center-photo {
+  width: 50%;
+  background-color: yellow;
+  height: 300px;
+  margin: 0 auto;
+}
+
+#g-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#gallery {
+  background-color: red;
+  height: 100%;
+  padding: 50px 40px 0;
+}
+#gallery #img-container {
+  height: 50%;
+  border-bottom: 1px solid yellow;
+  position: relative;
+}
+#gallery #showcase {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+#gallery #showcase img {
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+}
+
+#thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#thumbnail-container .thumbnail {
+  flex-grow: 1;
+  margin: 5px 5px;
+  width: 55px;
+  height: 55px;
+}
+
+@media (max-width: 810px) {
+  #side-nav li {
+    font-size: 10px;
+  }
+}
+@media (max-width: 500px) {
+  #side-nav li {
+    display: inline-block;
+  }
+}

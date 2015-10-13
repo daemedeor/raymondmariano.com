@@ -1,0 +1,21 @@
+@import "variable";
+
+p, li {
+  color: white;
+}
+
+#desciption ul{
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: -1em;
+  list-style-type: none;
+
+  li:before{
+    content: "-";
+    margin-right: 5px;
+  }
+}
+
+h1 {
+  color: yellow;
+}
