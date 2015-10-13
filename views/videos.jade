@@ -1,5 +1,35 @@
 extends ./shared/layout
 
 block content
-  .row
-    #side-nav.columns.medium-3
+  .row#content
+    nav#side-nav
+      h1 Videos
+      ul.text-center
+        li.active
+          a(href="#" data-video="demo") Demo Reel
+        li
+          a(href="#" data-video="beach") Beach Sunset Painting
+        li
+          a(href="#" data-video="teacher") Teacher Examples
+        li
+          a(href="#" data-video="trees") Two Trees
+    
+    #main-content
+      include ./partial/video/video
+
+block footerScripts
+  script.
+    $(function(){
+      
+      $("li a", "#side-nav").click(function(e){
+
+        e.preventDefault();
+        $("li", "#side-nav").removeClass("active");
+        $(this).closest("li").addClass("active");
+        var newVideo = $(this).data("video");
+        $("#main-content").load("/gif/"+newPhoto, function(){
+          console.log("loading a new picture");
+        });
+
+      });
+    });

@@ -41,7 +41,10 @@ block footerScripts
         e.preventDefault();
         $("li", "#side-nav").removeClass("active");
         $(this).closest("li").addClass("active");
-        $("")
+        var newPhoto = $(this).data("gif");
+        $("#main-content").load("/gif/"+newPhoto, function(){
+          console.log("loading a new picture");
+        });
 
       });
     });
