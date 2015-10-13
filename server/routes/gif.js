@@ -8,7 +8,6 @@ router.get('/', function(req, res) {
 router.get("/:photo", function(req,res){
   var arithmageiaCharacters = ["rokuro","aonghus", "teza", "syna", "quinajah", "tertius"];
   var requestedPhoto = req.params.photo;
-  console.log(requestedPhoto);
 
   if(arithmageiaCharacters.indexOf(requestedPhoto) > -1){
     var arithageiaImageUrl = "/images/arithmageia/"+ requestedPhoto + ".gif";

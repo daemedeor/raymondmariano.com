@@ -7,31 +7,31 @@ block content
       h1.text-center Galleries
       ul.text-center
         li.active
-          a(href="#") Concept. Illustrations
+          a(href="#", data-gallery="concept") Concept. Illustrations
         li
-          a(href="#") Designs. Graphic Art
+          a(href="#", data-gallery="design") Designs. Graphic Art
         li
-          a(href="#") Shirt Designs
+          a(href="#", data-gallery="shirt") Shirt Designs
         li
-          a(href="#") Hawaii Acitivities Authority
+          a(href="#", data-gallery="haa") Hawaii Activities Authority
         li
-          a(href="#") Hawaii Discovery University
+          a(href="#", data-gallery="hdu") Hawaii Discovery University
         li
-          a(href="#") Kombucha Tea
+          a(href="#", data-gallery="kokmbucha") Kombucha Tea
         li 
-          a(href="#") Hawaii Rainbow Colors
+          a(href="#", data-gallery="hrc") Hawaii Rainbow Colors
         li 
-          a(href="#") Advertisements
+          a(href="#", data-gallery="advert") Advertisements
         li 
-          a(href="#") Stylus Pens
+          a(href="#", data-gallery="stylus") Stylus Pens
         li
-          a(href="#") Fruity Nudes
+          a(href="#", data-gallery="fruitNudes") Fruity Nudes
         li
-          a(href="#") Painting
+          a(href="#", data-gallery="painting") Painting
         li
-         a(href="#") Charcoal Drawing
+         a(href="#", data-gallery="charcoal") Charcoal Drawing
         li
-          a(href="#") Photography
+          a(href="#", data-gallery="photo") Photography
 
     div#main-content
       #gallery
@@ -43,18 +43,17 @@ block content
 
 block footerScripts
   script.
-    $(function(){
-    
-    $("li a", "#side-nav").click(function(e){
+    $(function(){  
+      $("li a", "#side-nav").click(function(e){
 
-      e.preventDefault();
-      $("li", "#side-nav").removeClass("active");
-      $(this).closest("li").addClass("active");
-      var newPhoto = $(this).data("gif");
-      $("#main-content").load("/gif/"+newPhoto, function(){
-        console.log("loading a new picture");
+        e.preventDefault();
+        $("li", "#side-nav").removeClass("active");
+        $(this).closest("li").addClass("active");
+        var newGallery = $(this).data("gallery");
+        $("#main-content").load("/gif/"+newGallery, function(){
+          console.log("loading a new picture");
+        });
+
       });
-
     });
-  });
   
