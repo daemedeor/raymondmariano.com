@@ -40,4 +40,21 @@ block content
             img(src="#")
         #thumbnail-container
           include partial/thumbnail.jade
+
+block footerScripts
+  script.
+    $(function(){
     
+    $("li a", "#side-nav").click(function(e){
+
+      e.preventDefault();
+      $("li", "#side-nav").removeClass("active");
+      $(this).closest("li").addClass("active");
+      var newPhoto = $(this).data("gif");
+      $("#main-content").load("/gif/"+newPhoto, function(){
+        console.log("loading a new picture");
+      });
+
+    });
+  });
+  
