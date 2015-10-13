@@ -31,7 +31,6 @@ nav li a {
   display: inline-block;
   width: 100%;
   color: #FEFF00;
-  transition: all .3s linear;
 }
 nav li:hover {
   background-color: #00CAFF;
