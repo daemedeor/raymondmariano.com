@@ -13,7 +13,7 @@ router.get("/:photo", function(req,res){
   if(arithmageiaCharacters.indexOf(requestedPhoto) > -1){
     var arithageiaImageUrl = "/images/arithmageia/"+ requestedPhoto + ".gif";
 
-    res.render("partial/gif/arithageia", {imgUrl: arithageiaImageUrl})
+    res.render("/partial/gif/arithmageia", {imgUrl: arithageiaImageUrl})
   }
   res.sendStatus(200);
 });
