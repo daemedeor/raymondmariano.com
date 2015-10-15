@@ -35,12 +35,19 @@
     }
 
     #title {
+      text-align: center;
+      display: inline-block;
 
       .name {
         font-size: 30px;
+        display: inline-block;
 
         .first, .last {
+          display: inline-block;
           height: 30px;
+        }
+        .first {
+          padding-right: 10px;
         }
       }
 

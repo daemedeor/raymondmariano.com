@@ -4,6 +4,8 @@ var express = require('express')
     , server  = require("http").createServer(app)
     , bodyParser = require("body-parser")
     , gif = require("./server/routes/gif.js")
+    , artportfolio = require("./server/routes/artportfolio.js")
+    , videos = require("./server/routes/videos.js")
     , config = require("./config/config");
 
 app.set('views', path.join(__dirname, '/views'));

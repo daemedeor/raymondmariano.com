@@ -11,14 +11,11 @@ block headerScripts
 
 block content
   .row#content
+
     include shared/responsiveSideNav
+
     div#main-content
-      #gallery
-        div#img-container
-          #showcase
-            img(src="#")
-        #thumbnail-container
-          include partial/thumbnail
+      include partial/artgallery/thumbnail.jade
 
 block footerScripts
   script.
@@ -38,7 +35,7 @@ block footerScripts
         $("li", "#side-nav").removeClass("active");
         $("a[data-gallery='"+newGallery+"']").closest("li").addClass("active");
 
-        $("#main-content").load("/gif/"+newGallery, function(){
+        $("#main-content").load("/artportfolio/"+newGallery, function(){
           console.log("loading a new picture");
         });
       }

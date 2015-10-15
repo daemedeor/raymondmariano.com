@@ -28,11 +28,20 @@
     margin: 5px 10px;
     font-size: 13px;
   }
+  nav #title {
+    text-align: center;
+    display: inline-block;
+  }
   nav #title .name {
     font-size: 30px;
+    display: inline-block;
   }
   nav #title .name .first, nav #title .name .last {
+    display: inline-block;
     height: 30px;
+  }
+  nav #title .name .first {
+    padding-right: 10px;
   }
   nav #title .subtitle {
     font-size: 12px;

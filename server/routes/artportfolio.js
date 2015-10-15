@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
               "haa": "Hawaii Activities Authority",
               "hdu": "Hawaii Discovery University",
               "kombucha": "Kombucha Tea",
+              "arithmagia": "Arithmagia",
               "hrc": "Hawaii Rainbow Colors",
               "advert": "Advertisements",
               "stylus": "Stylus",
@@ -24,10 +25,19 @@ router.get('/', function(req, res) {
 });
 
 router.get("/:gallery", function(req,res){
+  var offBeatGalleryPages = ["haa", "hdu", "kombucha", "arithmagia", "hrc","adevrt", "stylus"];
 
-  var requestedPhoto = req.params.gallery;
+  var requestedGallery = req.params.gallery;
 
-  res.sendStatus(200);
+  var currentPath = process.cwd();
+  var filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery + "/small/");
+
+
+  if(offBeatGalleryPages.indexOf(requestedGallery) == -1) {
+    res.render('partial/artgallery/thumbnail.jade', {gallery: requestedGallery, pictures: filesInGallery});
+  }else {
+
+  }
 });
 
 module.exports = router;

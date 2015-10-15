@@ -1,0 +1,9 @@
+if pictures
+  #gallery
+    div#img-container
+      #showcase
+        img(src="/images/#{gallery}/#{pictures[0]}", title="#{pictures[0]}", id="#{pictures[0]}")
+    #thumbnail-container
+      each picture, index in pictures
+        .thumbnail
+          img(src="/images/gallery/#{gallery}/small/#{picture}", title="#{picture}", id="#{picture}")

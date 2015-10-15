@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
 router.get("/:video", function(req,res){
 
   var requestedPhoto = req.params.video;
-  var fs.readdirSync(path);
+
   res.sendStatus(200);
 });
 
