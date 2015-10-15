@@ -1,0 +1,27 @@
+{
+  "name": "raymondmariano.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kingtak/raymondmariano.com",
+  "authors": [
+    "Kingtak Wong <k.just.wong@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3",
+    "jquery": "~2.1.4",
+    "modernizer": "~2.8.2"
+  }
+}

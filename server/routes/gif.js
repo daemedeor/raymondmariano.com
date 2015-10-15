@@ -2,7 +2,22 @@ var express = require('express')
     , router = express.Router();
 
 router.get('/', function(req, res) {
-  res.render("gif", {selected: '/gif', page: 'gif'});
+ var menu = {
+          title : { header: "Animated", subtitle: "GIFs"},
+          "rokuro": {selected: true, name: "Arithmageia - Rokuro"},
+          "aonghus": "Arithmageia - Aonghus",
+          "teza": "Arithmageia - Teza",
+          "syna": "Arithmageia - Syna",
+          "quinajah": "Arithmageia - Quinajah",
+          "tertius": "Arithmageia - Tertius",
+          "savannah": "Savannah Sun",
+          "monster": "Monster Drink Toxic",
+          "beach": "Beach at Dusk",
+          "pillbox": "Pillbox Sunrise",
+          "laugh": "Laugh Emoticon"
+          }
+
+  res.render("gif", {selected: '/gif', page: 'gif', menu: menu});
 });
 
 router.get("/:photo", function(req,res){

@@ -1,59 +1,46 @@
 extends ./shared/layout
 
+block headerScripts
+
+  script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
+
+  script.
+    $(function(){
+        $('select').select2();
+      });
+
 block content
   .row#content
-    nav#side-nav
-      h1.text-center Art 
-      h1.text-center Galleries
-      ul.text-center
-        li.active
-          a(href="#", data-gallery="concept") Concept. Illustrations
-        li
-          a(href="#", data-gallery="design") Designs. Graphic Art
-        li
-          a(href="#", data-gallery="shirt") Shirt Designs
-        li
-          a(href="#", data-gallery="haa") Hawaii Activities Authority
-        li
-          a(href="#", data-gallery="hdu") Hawaii Discovery University
-        li
-          a(href="#", data-gallery="kokmbucha") Kombucha Tea
-        li 
-          a(href="#", data-gallery="hrc") Hawaii Rainbow Colors
-        li 
-          a(href="#", data-gallery="advert") Advertisements
-        li 
-          a(href="#", data-gallery="stylus") Stylus Pens
-        li
-          a(href="#", data-gallery="fruitNudes") Fruity Nudes
-        li
-          a(href="#", data-gallery="painting") Painting
-        li
-         a(href="#", data-gallery="charcoal") Charcoal Drawing
-        li
-          a(href="#", data-gallery="photo") Photography
-
+    include shared/responsiveSideNav
     div#main-content
       #gallery
         div#img-container
           #showcase
             img(src="#")
         #thumbnail-container
-          include partial/thumbnail.jade
+          include partial/thumbnail
 
 block footerScripts
   script.
     $(function(){  
       $("li a", "#side-nav").click(function(e){
-
         e.preventDefault();
-        $("li", "#side-nav").removeClass("active");
-        $(this).closest("li").addClass("active");
         var newGallery = $(this).data("gallery");
+        ajaxCallToGif(newGallery);
+      });
+      
+      $(".select2-hidden-accessible").on("change", function (e) { 
+        var newGallery = $('select').select2("val");
+        ajaxCallToGif(newGallery);
+      });
+
+      function ajaxCallToGif(newGallery) {
+        $("li", "#side-nav").removeClass("active");
+        $("a[data-gallery='"+newGallery+"']").closest("li").addClass("active");
+
         $("#main-content").load("/gif/"+newGallery, function(){
           console.log("loading a new picture");
         });
-
-      });
+      }
     });
   

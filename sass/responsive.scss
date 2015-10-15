@@ -1,0 +1,84 @@
+@media (min-width: 641px) {
+  nav.row #menu li {
+    position: relative;
+    top: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 0 0 5px;
+
+    #menu li {
+      margin: 10px 0;
+    }
+  
+    #title {
+      padding: 0;
+    }
+
+    &#side-nav {
+      position: static;
+      width: 100%;
+      
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      } 
+
+      li {
+        width: auto;
+        flex-grow: 1;
+        margin: 5px 10px; 
+        font-size: 13px;
+      }
+    }
+
+    #title {
+
+      .name {
+        font-size: 30px;
+
+        .first, .last {
+          height: 30px;
+        }
+      }
+
+      .subtitle {
+        font-size: 12px;
+        top: 6px;
+        position: relative;
+      }
+    }
+  
+  }
+
+  #gallery {
+    padding: 0;
+
+    #img-container {
+      position: relative;
+      height: 330px;
+      width: 100%;
+      
+      #showcase {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  #content {
+    height: 100vh;
+  }
+
+  body {
+    padding: 5px 10px 0 10px;
+  }
+
+  #main-content {
+    width: 100%;
+    position: static;
+  }
+
+}

@@ -24,11 +24,46 @@ app.get("/about", function(req,res){
 });
 
 app.get("/videos", function(req,res){
+    var menu = {
+              title : { header: "Art", subtitle: "Galleries"},
+              "concept": {selected: true, name: "Concept. Illustrations"},
+              "design": "Designs. Graphic Art",
+              "shirt": "Shirt Designs",
+              "haa": "Hawaii Activities Authority",
+              "hdu": "Hawaii Discovery University",
+              "kombucha": "Kombucha Tea",
+              "hrc": "Hawaii Rainbow Colors",
+              "advert": "Advertisements",
+              "stylus": "Stylus",
+              "fruitNudes": "Fruity Nudes",
+              "painting": "Painting",
+              "charcoal": "Charcoal Drawing",
+              "photo": "Photography"
+              }
+
   res.render("videos", {selected: '/videos', page: 'videos'});
 });
 
 app.get("/artportfolio", function(req, res) {
-  res.render("artportfolio", {selected: '/artportfolio', page: 'artportfolio'});
+
+  var menu = {
+              title : { header: "Art", subtitle: "Galleries"},
+              "concept": {selected: true, name: "Concept. Illustrations"},
+              "design": "Designs. Graphic Art",
+              "shirt": "Shirt Designs",
+              "haa": "Hawaii Activities Authority",
+              "hdu": "Hawaii Discovery University",
+              "kombucha": "Kombucha Tea",
+              "hrc": "Hawaii Rainbow Colors",
+              "advert": "Advertisements",
+              "stylus": "Stylus",
+              "fruitNudes": "Fruity Nudes",
+              "painting": "Painting",
+              "charcoal": "Charcoal Drawing",
+              "photo": "Photography"
+              }
+
+  res.render("artportfolio", {selected: '/artportfolio', page: 'artportfolio', menu: menu});
 });
 
 app.get("/", function(req, res) {

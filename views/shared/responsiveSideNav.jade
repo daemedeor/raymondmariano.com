@@ -1,0 +1,30 @@
+
+if menu
+
+  nav#mobile-nav.show-for-small-only
+    select
+      each value, key in menu
+        if (typeof(value) == "string" || !value.selected) && key != "title"
+          option(value="#{key}")= value
+        else if key != "title"
+          option(value="#{key}",selected)= value.name
+
+  nav#side-nav.show-for-medium-up
+
+    -if(menu.title)
+      h1.text-center 
+        span #{menu.title.header}
+
+    -if(menu.title)
+      h1.
+        #{menu.title.subtitle}
+
+    ul.text-center
+      each value, key in menu
+        if (typeof(value) == "string" || !value.selected) && key != "title"
+          li
+            a(href="#", data-gallery="#{key}")= value
+        else if key != "title"
+          li.active
+            a(href="#", data-gallery="#{key}")= value.name
+

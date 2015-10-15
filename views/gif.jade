@@ -2,32 +2,7 @@ extends ./shared/layout
 
 block content
   .row#content
-    nav#side-nav
-      h4.text-center Animated
-      h1 GIFs
-      ul.text-center
-        li.active
-          a(href="#" data-gif="rokuro") Arithmageia - Rokuro
-        li
-          a(href="#" data-gif="aonghus") Arithmageia - Aonghus
-        li
-          a(href="#" data-gif="teza") Arithmageia - Teza
-        li
-          a(href="#" data-gif="syna") Arithmageia - Syna
-        li
-          a(href="#" data-gif="quinajah") Arithmageia - Quinajah
-        li
-          a(href="#" data-gif="tertius") Arithmageia - Tertius
-        li
-          a(href="#" data-gif="savannah") Savannah Sun
-        li
-          a(href="#" data-gif="monster") Monster Drink Toxic
-        li
-          a(href="#" data-gif="beach") Beach at Dusk
-        li
-          a(href="#" data-gif="pillbox") Pillbox Sunrise
-        li
-          a(href="#" data-gif="laugh") Laugh Emoticon
+    include shared/responsiveSideNav
     
     #main-content
       include ./partial/gif/arithmageia
