@@ -1,0 +1,64 @@
+{
+  "name": "raymondmariano.com",
+  "version": "1.0.0",
+  "description": "A portfolio site for Raymond Mariano",
+  "main": "server.js",
+  "dependencies": {
+    "accepts": "^1.3.0",
+    "asap": "^2.0.3",
+    "async": "^1.4.2",
+    "body-parser": "^1.14.1",
+    "character-parser": "^1.2.2",
+    "commander": "^2.9.0",
+    "cookie": "^0.2.2",
+    "css": "^2.2.1",
+    "css-parse": "^2.0.0",
+    "css-stringify": "^2.0.0",
+    "escape-html": "^1.0.3",
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "iconv-lite": "^0.4.13",
+    "ipaddr.js": "^1.0.3",
+    "jade": "^1.11.0",
+    "jstransformer": "^0.0.3",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "negotiator": "^0.6.0",
+    "optimist": "^0.6.1",
+    "path": "^0.12.7",
+    "path-to-regexp": "^1.2.1",
+    "promise": "^7.0.4",
+    "qs": "^5.2.0",
+    "source-map": "^0.5.1",
+    "transformers": "^3.1.0",
+    "util": "^0.10.3",
+    "vary": "^1.1.0",
+    "window-size": "^0.1.2",
+    "with": "^5.0.0",
+    "wordwrap": "^1.0.0",
+    "yargs": "^3.27.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingtak/raymondmariano.com.git"
+  },
+  "keywords": [
+    "portfolio",
+    "design",
+    "artist",
+    "gallery",
+    "gifs",
+    "video"
+  ],
+  "author": "Kingtak Justin Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kingtak/raymondmariano.com/issues"
+  },
+  "homepage": "https://github.com/kingtak/raymondmariano.com#readme"
+}
