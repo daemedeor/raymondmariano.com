@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/gif", gif);
+app.use("/artportfolio", artportfolio);
+app.use("/videos", videos);
 
 app.get("/contact", function(req,res){
   res.render("contact", {selected: '/contact', page: 'contact'});
@@ -21,49 +23,6 @@ app.get("/contact", function(req,res){
 
 app.get("/about", function(req,res){
   res.render("about", {selected: '/about', page: 'about'});
-});
-
-app.get("/videos", function(req,res){
-    var menu = {
-              title : { header: "Art", subtitle: "Galleries"},
-              "concept": {selected: true, name: "Concept. Illustrations"},
-              "design": "Designs. Graphic Art",
-              "shirt": "Shirt Designs",
-              "haa": "Hawaii Activities Authority",
-              "hdu": "Hawaii Discovery University",
-              "kombucha": "Kombucha Tea",
-              "hrc": "Hawaii Rainbow Colors",
-              "advert": "Advertisements",
-              "stylus": "Stylus",
-              "fruitNudes": "Fruity Nudes",
-              "painting": "Painting",
-              "charcoal": "Charcoal Drawing",
-              "photo": "Photography"
-              }
-
-  res.render("videos", {selected: '/videos', page: 'videos'});
-});
-
-app.get("/artportfolio", function(req, res) {
-
-  var menu = {
-              title : { header: "Art", subtitle: "Galleries"},
-              "concept": {selected: true, name: "Concept. Illustrations"},
-              "design": "Designs. Graphic Art",
-              "shirt": "Shirt Designs",
-              "haa": "Hawaii Activities Authority",
-              "hdu": "Hawaii Discovery University",
-              "kombucha": "Kombucha Tea",
-              "hrc": "Hawaii Rainbow Colors",
-              "advert": "Advertisements",
-              "stylus": "Stylus",
-              "fruitNudes": "Fruity Nudes",
-              "painting": "Painting",
-              "charcoal": "Charcoal Drawing",
-              "photo": "Photography"
-              }
-
-  res.render("artportfolio", {selected: '/artportfolio', page: 'artportfolio', menu: menu});
 });
 
 app.get("/", function(req, res) {

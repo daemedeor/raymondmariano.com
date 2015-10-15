@@ -1,5 +1,6 @@
 var express = require('express')
-    , router = express.Router();
+    , router = express.Router()
+    , fs = require('fs');
 
 router.get('/', function(req, res) {
  var menu = {
@@ -16,7 +17,6 @@ router.get('/', function(req, res) {
           "pillbox": "Pillbox Sunrise",
           "laugh": "Laugh Emoticon"
           }
-
   res.render("gif", {selected: '/gif', page: 'gif', menu: menu});
 });
 
