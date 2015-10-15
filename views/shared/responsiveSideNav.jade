@@ -1,7 +1,7 @@
 
 if menu
 
-  nav#mobile-nav.show-for-small-only
+  nav#mobile-nav.show-for-medium-down
     select
       each value, key in menu
         if (typeof(value) == "string" || !value.selected) && key != "title"
@@ -9,7 +9,7 @@ if menu
         else if key != "title"
           option(value="#{key}",selected)= value.name
 
-  nav#side-nav.show-for-medium-up
+  nav#side-nav.show-for-large-up
 
     -if(menu.title)
       h1.text-center 
