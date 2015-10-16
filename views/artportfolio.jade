@@ -1,14 +1,10 @@
 extends ./shared/layout
+
 block headerStyles
   link(rel="stylesheet", href="/css/coverflow.css") 
+
 block headerScripts
-
   script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
-
-  script.
-    $(function(){
-      $('select').select2();
-    });
 
 block content
   .row#content

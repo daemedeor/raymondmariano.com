@@ -1,5 +1,8 @@
 extends ./shared/layout
 
+block headerScripts
+  script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
+    
 block content
   .row#content
     include shared/responsiveSideNav

@@ -1,24 +1,17 @@
 var express = require('express')
     , router = express.Router()
     , fs = require('fs');
+    
+var menu = {
+                title : { header: "Videos", subtitle: ""},
+                "demo": {selected: true, name: "Demo Reel"},
+                "beach": "Beach Sunset Painting",
+                "teacher": "Teacher Examples",
+                "trees": "Two Trees"
+            }
 
 router.get('/', function(req, res) {
-  var menu = {
-            title : { header: "Art", subtitle: "Galleries"},
-            "concept": {selected: true, name: "Concept. Illustrations"},
-            "design": "Designs. Graphic Art",
-            "shirt": "Shirt Designs",
-            "haa": "Hawaii Activities Authority",
-            "hdu": "Hawaii Discovery University",
-            "kombucha": "Kombucha Tea",
-            "hrc": "Hawaii Rainbow Colors",
-            "advert": "Advertisements",
-            "stylus": "Stylus",
-            "fruitNudes": "Fruity Nudes",
-            "painting": "Painting",
-            "charcoal": "Charcoal Drawing",
-            "photo": "Photography"
-            }
+
 
   res.render("videos", {selected: '/videos', page: 'videos', menu: menu});
 });

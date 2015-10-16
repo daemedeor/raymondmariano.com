@@ -32,6 +32,8 @@ if menu
   script.
 
     $(function(){  
+      $('select').select2();
+
       $("li a", "#side-nav").click(function(e){
         e.preventDefault();
         var newCategory = $(this).data("gallery");

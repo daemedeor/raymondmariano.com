@@ -1,19 +1,12 @@
 extends ./shared/layout
 
+block headerScripts
+  script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
+    
 block content
   .row#content
-    nav#side-nav
-      h1 Videos
-      ul.text-center
-        li.active
-          a(href="#" data-video="demo") Demo Reel
-        li
-          a(href="#" data-video="beach") Beach Sunset Painting
-        li
-          a(href="#" data-video="teacher") Teacher Examples
-        li
-          a(href="#" data-video="trees") Two Trees
-    
+    include shared/responsiveSideNav
+  
     #main-content
       include ./partial/video/video
 
