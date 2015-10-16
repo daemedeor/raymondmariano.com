@@ -25,11 +25,6 @@ block footerScripts
         var newGallery = $(this).data("gallery");
         ajaxCallToGif(newGallery);
       });
-      
-      $(".select2-hidden-accessible").on("change", function (e) { 
-        var newGallery = $('select').select2("val");
-        ajaxCallToGif(newGallery);
-      });
 
       function ajaxCallToGif(newGallery) {
         $("li", "#side-nav").removeClass("active");

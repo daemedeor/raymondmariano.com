@@ -8225,7 +8225,7 @@ nav ul {
 nav li {
   text-align: center;
   color: #FEFF00;
-  font-size: 10px;
+  font-size: 18px;
   display: inline-block;
   white-space: nowrap;
   width: 16%;
@@ -8267,6 +8267,7 @@ nav#side-nav h1 {
 nav#side-nav li {
   margin: 2px 0;
   width: 100%;
+  font-size: 15px;
 }
 nav#side-nav li a {
   padding: 0;

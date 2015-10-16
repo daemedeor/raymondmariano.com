@@ -37,15 +37,6 @@
   width: 100%;
   position: relative;
 }
-#gallery #showcase img:hover:before {
-  content: "";
-  background-color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 
 #thumbnail-container {
   display: flex;
@@ -55,6 +46,15 @@
   margin: 5px 5px;
   width: 55px;
   height: 55px;
+}
+#thumbnail-container .thumbnail:hover:before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 @media (max-width: 810px) {

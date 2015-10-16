@@ -1,7 +1,7 @@
 
 if menu
 
-  nav#mobile-nav.show-for-medium-down
+  nav#mobile-nav.show-for-small-down
     select
       each value, key in menu
         if (typeof(value) == "string" || !value.selected) && key != "title"
@@ -9,7 +9,7 @@ if menu
         else if key != "title"
           option(value="#{key}",selected)= value.name
 
-  nav#side-nav.show-for-large-up
+  nav#side-nav.show-for-medium-up
 
     -if(menu.title)
       h1.text-center 
@@ -28,3 +28,27 @@ if menu
           li.active
             a(href="#", data-gallery="#{key}")= value.name
 
+
+  script.
+
+    $(function(){  
+      $("li a", "#side-nav").click(function(e){
+        e.preventDefault();
+        var newCategory = $(this).data("gallery");
+        ajaxCallToGif("#{page}", newCategory);
+      });
+
+      $(".select2-hidden-accessible").on("change", function (e) { 
+        var newCategory = $('select').select2("val");
+        ajaxCallToGif("#{page}",newCategory);
+      });
+
+      function ajaxCallToGif(route, newCategory) {
+        $("li", "#side-nav").removeClass("active");
+        $("a[data-gallery='"+newCategory+"']").closest("li").addClass("active");
+
+        $("#main-content").load("/"+route+"/"+newCategory, function(){
+          console.log("loading a new picture");
+        });
+      }
+    });

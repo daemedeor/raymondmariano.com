@@ -21,8 +21,12 @@ router.get('/', function(req, res) {
               "photo": "Photography"
               }
 
-  res.render("artportfolio", {selected: '/artportfolio', page: 'artportfolio', menu: menu});
+  var currentPath = process.cwd();
+  var filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/concept/small/");
+
+  res.render("artportfolio", {selected: '/artportfolio', page: 'artportfolio', menu: menu, gallery: "concept", pictures: filesInGallery});
 });
+
 
 router.get("/:gallery", function(req,res){
   var offBeatGalleryPages = ["haa", "hdu", "kombucha", "arithmagia", "hrc","adevrt", "stylus"];

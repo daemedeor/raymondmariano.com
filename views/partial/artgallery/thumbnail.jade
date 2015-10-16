@@ -1,9 +1,16 @@
-if pictures
+if pictures && pictures.length > 0
   #gallery
     div#img-container
       #showcase
-        img(src="/images/#{gallery}/#{pictures[0]}", title="#{pictures[0]}", id="#{pictures[0]}")
+        img(src="/images/gallery/#{gallery}/#{pictures[0]}", title="#{pictures[0]}", id="#{pictures[0]}")
     #thumbnail-container
-      each picture, index in pictures
+      each picture in pictures
         .thumbnail
-          img(src="/images/gallery/#{gallery}/small/#{picture}", title="#{picture}", id="#{picture}")
+          img(src="/images/gallery/#{gallery}/small/#{picture}", title="#{picture}", data-name="#{picture}", data-gallery="#{gallery}")
+  script.
+    $(".thumbnail, .prevArrow, .nextArrow").click(function(e){
+      e.preventDefault();
+      var pictureToGet = $(this).data("name");
+      var gallery = $(this).data("gallery");
+
+    });
