@@ -9,7 +9,7 @@ var express = require('express')
               "haa": "Hawaii Activities Authority",
               "hdu": "Hawaii Discovery University",
               "kombucha": "Kombucha Tea",
-              "arithmagia": "Arithmagia",
+              "arithmageia": "Arithmageia",
               "hrc": "Hawaii Rainbow Colors",
               "advert": "Advertisements",
               "stylus": "Stylus",
@@ -58,7 +58,7 @@ router.get("/:gallery", function(req,res){
       newFileImageObject = {};
       var findFileExtention = e.lastIndexOf(".");
       if( findFileExtention > -1){
-        actualFileName = e.substr(0,findFileExtention);
+        actualFileName = e.substr(0,findFileExtentionspa);
         newFileImageObject.title = actualFileName;
         newFileImageObject.description = "";
         newFileImageObject.image = "/images/gallery/"+requestedGallery +"/"+e;
