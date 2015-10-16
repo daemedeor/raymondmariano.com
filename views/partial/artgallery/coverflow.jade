@@ -1,0 +1,15 @@
+div#player
+
+script.
+
+  $(function(){
+    $("#main-content").removeClass();
+    $("#main-content").addClass("flow");
+
+
+    coverflow('player').setup({
+      playlist: !{coverflowItems},
+      width: 460,
+      height: 240
+    });
+  })

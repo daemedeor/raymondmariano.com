@@ -2,7 +2,6 @@
 
 .center-photo {
   width: 50%;
-  background-color: yellow;
   height: 300px;
   margin: 0 auto;
 }
@@ -14,7 +13,6 @@
 }
 
 #gallery {
-  background-color: red;
   height:  100%;
   padding: 50px 40px 0;
   
@@ -25,24 +23,61 @@
   }
 
   #showcase {
-    width: 60%;
-    margin: 0 auto;
+    width: 100%;
     padding-bottom: 10px;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0; 
+    display: flex;
+    align-items: stretch;
 
     img{
-      background-color: yellow;
-      height: 100%;
-      width: 100%;
+      flex-grow: 3;
       position: relative;
+    }
+
+    span {
+      flex-grow: 1;
+      height: 100%;
+      position: relative;
+
+      &.previousArrow, &.nextArrow {
+        
+        &:before {
+          position: absolute;
+          top: 50%;
+          color: white;
+        }
+
+        &:hover {
+          background: rgba(255,255,255,.4);
+
+          &:before {
+            color: black;
+          }
+        }
+      }
+
+      &.previousArrow:before{
+        content: '\25c0';
+        right: 5px;
+      }
+
+      &.nextArrow:before{
+        content: '\25b6';
+        left: 5px;
+      }
     }
   }
 }
+#main-content.flow {
 
+  #player {
+    width: 100%;
+  }
+}
 #thumbnail-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,24 +86,26 @@
     margin: 5px 5px;
     width: 55px;
     height: 55px;
+    position: relative;
 
-     &:hover:before {
-        content: "";
-        background-color: white;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
+    &:hover:before {
+      content: "";
+      background: rgba(255,255,255,0.75);
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
   }
 }
 
 @media (max-width: 810px) {
-  #side-nav li{
-    font-size: 10px;
+  nav#side-nav li{
+    font-size: 13px;
   }
 }
+
 
 @media (max-width: 500px) {
   #side-nav li{

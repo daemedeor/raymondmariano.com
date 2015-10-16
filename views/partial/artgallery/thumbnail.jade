@@ -2,15 +2,61 @@ if pictures && pictures.length > 0
   #gallery
     div#img-container
       #showcase
-        img(src="/images/gallery/#{gallery}/#{pictures[0]}", title="#{pictures[0]}", id="#{pictures[0]}")
+        span.previousArrow(data-index="0")
+        img(src="/images/gallery/#{gallery}/#{pictures[0]}", title="#{pictures[0]}", id="#{pictures[0]}" data-index="1")
+        span.nextArrow(data-index="1")
     #thumbnail-container
-      each picture in pictures
+      each picture, index in pictures
         .thumbnail
-          img(src="/images/gallery/#{gallery}/small/#{picture}", title="#{picture}", data-name="#{picture}", data-gallery="#{gallery}")
+          img(src="/images/gallery/#{gallery}/small/#{picture}", title="#{picture}", data-name="#{picture}", data-index="#{index}" data-gallery="#{gallery}")
   script.
-    $(".thumbnail, .prevArrow, .nextArrow").click(function(e){
-      e.preventDefault();
-      var pictureToGet = $(this).data("name");
-      var gallery = $(this).data("gallery");
+    $(function(){
+
+      $("#main-content").removeClass();
+      $("#main-content").addClass("thumbnail");
+      $(".previousArrow").attr("data-index", $(".thumbnail").length - 1);
+
+      $("img", "#showcase").click(function(e){
+        e.preventDefault();
+        $this = $(this);
+        var currentIndex = $this.data("index");
+        setNewPicture(currentIndex);
+      });
+
+      $(".thumbnail", "#thumbnail-container").click(function(e){
+        e.preventDefault();
+        $this = $(this).find("img");
+        var currentIndex = $this.data("index");
+        setNewPicture(currentIndex);
+      });
+
+      $("span.nextArrow, span.previousArrow", "#showcase").click(function(e){
+        e.preventDefault();
+        var $this = $(this);
+        var indexToGo = $this.data("index");
+        setNewPicture(indexToGo);
+      });
 
     });
+
+    function setNewPicture (newPictureIndex) {
+      var $this = $("img[data-index="+newPictureIndex+"]", "#thumbnail-container");
+
+      var picture = $this.data("name");
+      var gallery = $this.data("gallery");
+      $("img", "#showcase").attr("src", "/images/gallery/"+gallery+"/"+picture);
+      $("img", "#showcase").attr("title", picture);
+      $("img", "#showcase").attr("id", picture);
+
+      updateArrowsAndImage(newPictureIndex);
+    }
+
+    function updateArrowsAndImage (currentIndex) {
+      var galleryLength = $(".thumbnail").length - 1;
+      var nextIndex = (currentIndex + 1 < galleryLength) ? currentIndex + 1 : 0;
+      var previousIndex = (currentIndex - 1  >= 0) ? currentIndex - 1 : galleryLength;
+      $(".nextArrow").data("index", nextIndex);
+      $(".previousArrow").data("index", previousIndex);
+      $("img", "#showcase").data("index", nextIndex);
+
+    }

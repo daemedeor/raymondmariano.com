@@ -29,18 +29,31 @@ router.get('/', function(req, res) {
 
 
 router.get("/:gallery", function(req,res){
-  var offBeatGalleryPages = ["haa", "hdu", "kombucha", "arithmagia", "hrc","adevrt", "stylus"];
+  var offBeatGalleryPages = ["haa", "hdu", "kombucha", "arithmagia", "hrc","advert", "stylus"];
 
   var requestedGallery = req.params.gallery;
 
   var currentPath = process.cwd();
-  var filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery + "/small/");
-
-
+  var filesInGallery, newFileImageObject;
+  
   if(offBeatGalleryPages.indexOf(requestedGallery) == -1) {
+    filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery + "/small/");
     res.render('partial/artgallery/thumbnail.jade', {gallery: requestedGallery, pictures: filesInGallery});
   }else {
+    var coverflowArray = [], actualFileName;
+    filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery);
 
+    filesInGallery.forEach(function(e,i) {
+      newFileImageObject = {};
+      actualFileName = e.substr(0,e.lastIndexOf("."));
+      newFileImageObject.title = actualFileName;
+      newFileImageObject.description = "";
+      newFileImageObject.image = "/images/gallery/"+requestedGallery +"/"+e;
+      console.log(newFileImageObject);
+      coverflowArray.push(newFileImageObject);
+    });
+
+    res.render('partial/artgallery/coverflow.jade', {gallery: requestedGallery, coverflowItems: JSON.stringify(coverflowArray)});
   }
 });
 

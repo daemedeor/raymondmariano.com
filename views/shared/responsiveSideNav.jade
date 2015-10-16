@@ -47,8 +47,6 @@ if menu
         $("li", "#side-nav").removeClass("active");
         $("a[data-gallery='"+newCategory+"']").closest("li").addClass("active");
 
-        $("#main-content").load("/"+route+"/"+newCategory, function(){
-          console.log("loading a new picture");
-        });
+        $("#main-content").load("/"+route+"/"+newCategory);
       }
     });

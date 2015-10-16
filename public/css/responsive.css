@@ -8,6 +8,9 @@
   nav {
     padding: 0 0 5px;
   }
+  nav li {
+    font-size: 11px;
+  }
   nav #menu li {
     margin: 10px 0;
   }
@@ -19,14 +22,22 @@
     width: 100%;
   }
   nav#side-nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
   nav#side-nav li {
     width: auto;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 5px 10px;
-    font-size: 13px;
+    font-size: 11px;
   }
   nav #title {
     text-align: center;
@@ -60,6 +71,9 @@
   #gallery #img-container #showcase {
     width: 100%;
     margin: 0;
+  }
+  #gallery #img-container #showcase span.previousArrow, #gallery #img-container #showcase span.nextArrow {
+    display: none;
   }
 
   #content {

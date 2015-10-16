@@ -1,13 +1,14 @@
 extends ./shared/layout
-
+block headerStyles
+  link(rel="stylesheet", href="/css/coverflow.css") 
 block headerScripts
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js')
 
   script.
     $(function(){
-        $('select').select2();
-      });
+      $('select').select2();
+    });
 
 block content
   .row#content
@@ -18,21 +19,5 @@ block content
       include partial/artgallery/thumbnail.jade
 
 block footerScripts
-  script.
-    $(function(){  
-      $("li a", "#side-nav").click(function(e){
-        e.preventDefault();
-        var newGallery = $(this).data("gallery");
-        ajaxCallToGif(newGallery);
-      });
-
-      function ajaxCallToGif(newGallery) {
-        $("li", "#side-nav").removeClass("active");
-        $("a[data-gallery='"+newGallery+"']").closest("li").addClass("active");
-
-        $("#main-content").load("/artportfolio/"+newGallery, function(){
-          console.log("loading a new picture");
-        });
-      }
-    });
+  script(src='/js/coverflow.js')
   
