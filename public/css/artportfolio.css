@@ -73,6 +73,7 @@
 
 #main-content.flow h1, #main-content.flow h2, #main-content.flow h3, #main-content.flow h4, #main-content.flow h5, #main-content.flow h6, #main-content.flow p {
   color: white;
+  white-space: pre-wrap;
 }
 #main-content.flow #player:focus {
   outline: none;

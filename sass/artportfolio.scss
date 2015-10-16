@@ -76,6 +76,7 @@
   
   h1, h2, h3, h4, h5, h6, p {
     color: white;
+    white-space: pre-wrap;
   }
 
   #player {
@@ -89,7 +90,7 @@
     height: 20%;
     width: 100%;
   }
-  
+
   .coverflow-text h1{
     color: white;
   }
