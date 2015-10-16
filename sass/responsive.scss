@@ -77,17 +77,13 @@
         margin: 0;
 
         span {
-          
+
           &.previousArrow, &.nextArrow {
           display: none;
           }
         }
       }
     }
-  }
-
-  #content {
-    height: 100vh;
   }
 
   body {
@@ -97,6 +93,11 @@
   #main-content {
     width: 100%;
     position: static;
+
+    #player {
+      height: 275px !important;
+    }
+
   }
 
 }

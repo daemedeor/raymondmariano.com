@@ -20,7 +20,10 @@ var express = require('express')
             }
 
 var metaData = {
-    "haa": { title: "Hawaii Activities Authority", description: "In progress.... Coming soon", explanation: "I was involved in working on a new mobile application that will put the spotlight on Hawaii activities and local products! I designed the layout and all of the graphic elements of this app."}
+  "haa": { title: "Hawaii Activities Authority", subtitle: "In progress.... Coming soon", description: "I was involved in working on a new mobile application that will put the spotlight on Hawaii activities and local products! I designed the layout and all of the graphic elements of this app."},
+  "hdu": { title: "Hawaii Discovery University", subtitle: "Hawaii Adventure Coloring Book",  description: "\"Hawaii Discovery University for Kids\" is a new Hawaiian-themed coloring book application. It\'s a great way for kids to learn the culture, lifestyle, and beauty that makes Hawaii so special! Kids will enjoy many wonderful pages of art as they color!"},
+  "hrc": { title: "Hawaii Rainbow Colors", subtitle:"A Hawaiian-themed coloring book"},
+  "advert": { title: "Advertisements", description: "A sampling of different advertisements I have helped to design \(Advertisment samples used for mobile application startup. Photography elements are not credited to designer.\)"}
 }
 router.get('/', function(req, res) {
 
@@ -38,13 +41,15 @@ router.get("/:gallery", function(req,res){
   var requestedGallery = req.params.gallery;
 
   var currentPath = process.cwd();
-  var filesInGallery, newFileImageObject;
+  var filesInGallery = [], newFileImageObject,  coverflowArray = [], actualFileName, metaDataForPage, learnMore;
   
   if(offBeatGalleryPages.indexOf(requestedGallery) == -1) {
+
     filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery + "/small/");
+
     res.render('partial/artgallery/thumbnail.jade', {gallery: requestedGallery, pictures: filesInGallery});
   }else {
-    var coverflowArray = [], actualFileName;
+
     filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery);
 
     filesInGallery.forEach(function(e,i) {
@@ -53,11 +58,12 @@ router.get("/:gallery", function(req,res){
       newFileImageObject.title = actualFileName;
       newFileImageObject.description = "";
       newFileImageObject.image = "/images/gallery/"+requestedGallery +"/"+e;
-      console.log(newFileImageObject);
       coverflowArray.push(newFileImageObject);
     });
-    var currentData = metaData[requestedGallery];
-    res.render('partial/artgallery/coverflow.jade', {gallery: requestedGallery, coverflowItems: JSON.stringify(coverflowArray), title: (currentData) ? currentData.title : "", description: (currentData) ? currentData.description : "", explanation: (currentData) ? currentData.explanation : ""});
+    
+    metaDataForPage = metaData[requestedGallery];
+    
+    res.render('partial/artgallery/coverflow.jade', {gallery: requestedGallery, coverflowItems: JSON.stringify(coverflowArray), title: (metaDataForPage) ? metaDataForPage.title : "", subtitle: (metaDataForPage) ? metaDataForPage.subtitle : "", description: (metaDataForPage) ? metaDataForPage.description : "", learnMore: (learnMore) ? learnMore : null});
   }
 });
 

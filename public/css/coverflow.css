@@ -19,9 +19,7 @@
 .coverflow .coverflow-rect {
   position: absolute;
   -webkit-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .coverflow .coverflow-tray,
@@ -29,20 +27,16 @@
   pointer-events: none;
   position: absolute;
   -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+          transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .coverflow .coverflow-hit {
   position: absolute;
   opacity: 0;
   -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .coverflow .coverflow-cell canvas {

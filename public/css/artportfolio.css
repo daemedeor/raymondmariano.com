@@ -74,9 +74,6 @@
 #main-content.flow h1, #main-content.flow h2, #main-content.flow h3, #main-content.flow h4, #main-content.flow h5, #main-content.flow h6, #main-content.flow p {
   color: white;
 }
-#main-content.flow #player {
-  width: 100%;
-}
 #main-content.flow #player:focus {
   outline: none;
 }

@@ -76,10 +76,6 @@
     display: none;
   }
 
-  #content {
-    height: 100vh;
-  }
-
   body {
     padding: 5px 10px 0 10px;
   }
@@ -87,5 +83,8 @@
   #main-content {
     width: 100%;
     position: static;
+  }
+  #main-content #player {
+    height: 275px !important;
   }
 }

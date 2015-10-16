@@ -1,9 +1,15 @@
 div#playerDescription
   h1.text-center #{title}
-  h4.text-center #{description}
+  if subtitle
+    h4.text-center #{subtitle}
+
 div#player
+
 div#small-text
-  p #{explanation}
+  p.text-center #{description}
+
+if learnMore
+  a.learnMore(href="#{learnMore.url}")
 
 script.
 
