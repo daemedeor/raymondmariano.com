@@ -53,12 +53,11 @@ router.get("/:gallery", function(req,res){
   }else {
 
     filesInGallery = fs.readdirSync(currentPath + "/public/images/gallery/"+requestedGallery);
-    console.log(filesInGallery);
     filesInGallery.forEach(function(e,i) {
       newFileImageObject = {};
       var findFileExtention = e.lastIndexOf(".");
       if( findFileExtention > -1){
-        actualFileName = e.substr(0,findFileExtentionspa);
+        actualFileName = e.substr(0,findFileExtention);
         newFileImageObject.title = actualFileName;
         newFileImageObject.description = "";
         newFileImageObject.image = "/images/gallery/"+requestedGallery +"/"+e;
