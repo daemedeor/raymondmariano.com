@@ -1,4 +1,9 @@
+div#playerDescription
+  h1.text-center #{title}
+  h4.text-center #{description}
 div#player
+div#small-text
+  p #{explanation}
 
 script.
 
@@ -9,7 +14,7 @@ script.
 
     coverflow('player').setup({
       playlist: !{coverflowItems},
-      width: 460,
-      height: 240
+      width: "100%",
+      height: "50%"
     });
   })
